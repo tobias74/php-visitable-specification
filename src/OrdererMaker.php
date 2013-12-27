@@ -1,5 +1,5 @@
 <?php 
-namespace BrokenPottery;
+namespace VisitableSpecification;
 
 class OrdererMaker
 {    
