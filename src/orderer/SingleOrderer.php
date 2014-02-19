@@ -1,5 +1,5 @@
 <?php 
-namespace BrokenPottery;
+namespace VisitableSpecification;
 
 class SingleOrderer extends AbstractOrderer implements OrdererInterface
 {
@@ -28,7 +28,7 @@ class SingleOrderer extends AbstractOrderer implements OrdererInterface
 		
 	
 	
-	
+	// this has to go into the visitor
 	public function getOrderClause($context)
 	{
 		$column = $context->getResponsibleMapperForField($this->getField())->getPreparedColumnForField($this->getField());
@@ -36,6 +36,11 @@ class SingleOrderer extends AbstractOrderer implements OrdererInterface
 		return $orderClause;
 	}
 	
+  public function acceptVisitor($visitor)
+  {
+    $visitor->visitSingleOrderer($this);
+  }
+
 	
 	
 }

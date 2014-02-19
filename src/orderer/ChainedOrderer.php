@@ -1,5 +1,5 @@
 <?php 
-namespace BrokenPottery;
+namespace VisitableSpecification;
 
 class ChainedOrderer extends AbstractOrderer implements OrdererInterface
 {
@@ -9,8 +9,28 @@ class ChainedOrderer extends AbstractOrderer implements OrdererInterface
 		$this->ordererB = $ordererB;
 	}
 	
+  // this method has to be transfered to the Visitor
 	public function getOrderClause($context)
 	{
 		return " ".$this->ordererA->getOrderClause($context). " , ".$this->ordererB->getOrderClause($context). " ";
 	}
+  
+  public function acceptVisitor($visitor)
+  {
+    $this->ordererA->acceptVisitor($visitor);
+      $this->ordererB->acceptVisitor($visitor);
+    $visitor->visitChainedOrderer($this);
+  }
+  
+  public function getFirstOrderer()
+  {
+    return $this->ordererA;
+  }
+  
+  public function getSecondOrderer()
+  {
+    return $this->ordererB;
+  }
+
+  
 }

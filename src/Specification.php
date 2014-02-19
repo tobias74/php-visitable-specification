@@ -78,7 +78,7 @@ class Specification implements SpecificationInterface
   {
     if ($this->_limiter === false)
     {
-      return "";
+      return "LIMIT 1000";
     }
     else
     {
@@ -90,6 +90,12 @@ class Specification implements SpecificationInterface
 	{
     return ($this->_criteria !== false);
 	}	
+
+  public function hasOrderer()
+  {
+    return ($this->_orderer !== false);
+  }   
+
 		
 	public function getCriteria()
 	{
