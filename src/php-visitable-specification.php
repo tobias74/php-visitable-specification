@@ -12,6 +12,7 @@ require_once(dirname(__FILE__).'/criteria/WithinDistanceCriteria.php');
 require_once(dirname(__FILE__).'/orderer/AbstractOrderer.php');
 require_once(dirname(__FILE__).'/orderer/SingleOrderer.php');
 require_once(dirname(__FILE__).'/orderer/ChainedOrderer.php');
+require_once(dirname(__FILE__).'/orderer/DistanceToPinOrderer.php');
 
 require_once(dirname(__FILE__).'/limiter/Limiter.php');
 
