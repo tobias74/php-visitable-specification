@@ -43,6 +43,11 @@ class ST_WithinDistanceCriteria extends AbstractCriteria
     return ($this->getGeometryField() === $field);  
   }
   
+  public function getField()
+  {
+    return $this->getGeometryField();
+  }
+  
   public function getGeometryField()
   {
     return $this->geometryField;

@@ -7,10 +7,11 @@ abstract class ComparisonCriteria extends AbstractCriteria
 	protected $value;
 	
 	
-	public function __construct($field,$value)
+	public function __construct($field,$value, $entityName = null)
 	{
 		$this->field = $field;
 		$this->value = $value;
+    $this->entityName = $entityName;
 	}
 	
 		
@@ -29,7 +30,15 @@ abstract class ComparisonCriteria extends AbstractCriteria
 		return $this->field;
 	}
 	
-	
+	public function getEntityName()
+  {
+    return $this->entityName;
+  }
+  
+  public function hasEntityName()
+  {
+    return ($this->entityName != null);
+  }
 }
 
 
@@ -92,9 +101,10 @@ class NotNullCriteria extends AbstractCriteria
 {
   protected $field;
   
-  public function __construct($field)
+  public function __construct($field, $entityName = null)
   {
     $this->field = $field;
+    $this->entityName = $entityName;
   }
   
   public function affectsField($field)
@@ -105,6 +115,16 @@ class NotNullCriteria extends AbstractCriteria
   public function getField()
   {
     return $this->field;
+  }
+  
+  public function getEntityName()
+  {
+    return $this->entityName;
+  }
+
+  public function hasEntityName()
+  {
+    return ($this->entityName != null);
   }
   
   public function acceptVisitor($visitor)
