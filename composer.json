@@ -3,5 +3,10 @@
     "description": "criterias and specifications",
     "type": "library",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpVisitableSpecification\\": "src/"
+        }
+    },
     "require": {}
 }

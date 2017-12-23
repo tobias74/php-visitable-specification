@@ -1,5 +1,5 @@
 <?php
-namespace VisitableSpecification;
+namespace PhpVisitableSpecification;
 
 class CriteriaMaker
 {
@@ -45,9 +45,9 @@ class CriteriaMaker
         return new CriteriaBetween($field,$start,$end);
     }
 
-    public function withinDistance($pointOfInterest,$geometryField,$maximumDistance)
+    public function withinDistance($fieldName, $pointOfInterest, $maximumDistance)
     {
-        return new WithinDistanceCriteria($pointOfInterest,$geometryField,$maximumDistance);
+        return new WithinDistanceCriteria($fieldName, $pointOfInterest, $maximumDistance);
     }
     
     public function isNotNull($field)
@@ -69,7 +69,8 @@ class CriteriaMaker
     
     public function any()
     {
-        return $this->without('id',-1);
+        return new AnyCriteria();
+        //return $this->without('id',-1);
     }
 
     public function none()
@@ -99,4 +100,3 @@ class CriteriaMaker
     }
     
 }
-

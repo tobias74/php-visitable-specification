@@ -1,5 +1,5 @@
 <?php 
-namespace VisitableSpecification;
+namespace PhpVisitableSpecification;
 
 class AndCriteria extends AbstractCriteria
 {
@@ -12,7 +12,7 @@ class AndCriteria extends AbstractCriteria
 	public function acceptVisitor($visitor)
 	{
 	  $this->critA->acceptVisitor($visitor);
-    $this->critB->acceptVisitor($visitor);
+      $this->critB->acceptVisitor($visitor);
 	  $visitor->visitAndCriteria($this);
 	}
 	

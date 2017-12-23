@@ -1,5 +1,5 @@
 <?php 
-namespace VisitableSpecification;
+namespace PhpVisitableSpecification;
 
 class NotCriteria extends AbstractCriteria
 {

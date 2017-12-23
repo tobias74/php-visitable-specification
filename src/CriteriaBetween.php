@@ -1,5 +1,5 @@
 <?php 
-namespace VisitableSpecification;
+namespace PhpVisitableSpecification;
 
 class CriteriaBetween extends AbstractCriteria
 {
