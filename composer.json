@@ -1,0 +1,7 @@
+{
+    "name": "tobias74/php-visitable-specification",
+    "description": "criterias and specifications",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
