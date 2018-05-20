@@ -32,12 +32,12 @@ class CriteriaBetween extends AbstractCriteria
 	
 	public function getStartValue()
 	{
-		return "'".addslashes($this->startValue)."'";
+		return $this->startValue;
 	}
 	
 	public function getEndValue()
 	{
-		return "'".addslashes($this->endValue)."'";
+		return $this->endValue;
 	}
 	
 	
