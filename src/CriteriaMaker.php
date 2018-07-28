@@ -49,6 +49,16 @@ class CriteriaMaker
     {
         return new WithinDistanceCriteria($fieldName, $pointOfInterest, $maximumDistance);
     }
+
+    public function withinBoundingBox($fieldName, $topLeft, $bottomRight)
+    {
+        return new BoundingBoxCriteria($fieldName, $topLeft, $bottomRight);
+    }
+
+    public function geoShape($fieldName, $shapeDefinition)
+    {
+        return new GeoShapeCriteria($fieldName, $shapeDefinition);
+    }
     
     public function isNotNull($field)
     {
