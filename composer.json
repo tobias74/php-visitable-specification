@@ -15,6 +15,9 @@
         }
     ],
     "require": {
-        "lvht/geohash": "dev-for-elastic"
-    }    
+        "lvht/geohash": "master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true    
+    
 }
