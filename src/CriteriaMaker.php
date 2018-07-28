@@ -55,6 +55,11 @@ class CriteriaMaker
         return new BoundingBoxCriteria($fieldName, $topLeft, $bottomRight);
     }
 
+    public function withinGeoHashCell($fieldName, $geoHashCell)
+    {
+        return new WithinGeoHashCellCriteria($fieldName, $geoHashCell);
+    }
+
     public function geoShape($fieldName, $shapeDefinition)
     {
         return new GeoShapeCriteria($fieldName, $shapeDefinition);

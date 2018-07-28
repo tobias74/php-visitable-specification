@@ -5,14 +5,18 @@ namespace PhpVisitableSpecification;
 class WithinBoundingBoxCriteria extends AbstractCriteria
 {
   protected $geometryField;
-  protected $topLeft;
-  protected $bottomRight;
+  public $topLeftLatitude;
+  public $topLeftLongitude;
+  public $bottomRightLatitude;
+  public $bottomRightLongitude;
 
   
-  public function __construct($geometryField, $topLeft, $bottomRight)
+  public function __construct($geometryField, $topLeftLatitude, $topLeftLongitude, $bottomRightLatitude, $bottomRightLongitude)
   {
-    $this->topLeft = $topLeft;
-    $this->bottomRight = $bottomRight;
+    $this->topLeftLatitude = $topLeftLatitude;
+    $this->topLeftLongitude = $topLeftLongitude;
+    $this->bottomRightLatitude = $bottomRightLatitude;
+    $this->bottomRightLongitude = $bottomRightLongitude;
     $this->geometryField = $geometryField;
   }
   
@@ -21,16 +25,6 @@ class WithinBoundingBoxCriteria extends AbstractCriteria
     $visitor->visitWithinBoundingBoxCriteria($this);
   }
     
-  public function getTopLeft()
-  {
-    return $this->topLeft;  
-  } 
-
-  public function getBottomRight()
-  {
-    return $this->bottomRight;  
-  } 
-   
   public function affectsField($field)
   {
     return ($this->getGeometryField() === $field);  
