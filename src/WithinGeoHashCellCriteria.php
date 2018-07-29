@@ -7,12 +7,12 @@ class WithinGeoHashCellCriteria extends WithinBoundingBoxCriteria
 
   public function __construct($geometryField, $geoHashCell)
   {
-      $boundingBox = \Lvht\GeoHash::getBoundingBox($geoHashCell);
-    
-      $this->topLeftLatitude = $boundingBox['top_left']['lat'];
-      $this->topLeftLongitude = $boundingBox['top_left']['lon'];
-      $this->bottomRightLatitude = $boundingBox['bottom_right']['lat'];
-      $this->bottomRightLongitude = $boundingBox['bottom_right']['lon'];
+      list($minlng, $maxlng, $minlat, $maxlat) = \Lvht\GeoHash::::decode($geoHashCell);
+      $this->topLeftLatitude = $maxlat;
+      $this->topLeftLongitude = $minlon;
+      $this->bottomRightLatitude = $minlat;
+      $this->bottomRightLongitude = $maxlon;
+
       $this->geometryField = $geometryField;
   }
   

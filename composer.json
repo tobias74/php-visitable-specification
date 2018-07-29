@@ -8,14 +8,8 @@
             "PhpVisitableSpecification\\": "src/"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/tobias74/geohash"
-        }
-    ],
     "require": {
-        "lvht/geohash": "master"
+        "lvht/geohash": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true    
